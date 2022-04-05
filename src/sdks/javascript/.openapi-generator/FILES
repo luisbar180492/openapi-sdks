@@ -1,6 +1,5 @@
 .babelrc
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 docs/Error.md
@@ -14,6 +13,3 @@ src/api/ToDoApi.js
 src/index.js
 src/model/Error.js
 src/model/ToDoItem.js
-test/api/ToDoApi.spec.js
-test/model/Error.spec.js
-test/model/ToDoItem.spec.js
