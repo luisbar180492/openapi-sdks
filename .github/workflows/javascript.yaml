@@ -1,0 +1,26 @@
+name: Build and deploy Javascript SDK
+on:
+  workflow_dispatch:
+jobs:
+  test-build-deploy:
+    runs-on: ubuntu-latest
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Fetch submodule
+        run: git submodule update --init
+      - name: Update package name on package.json file
+        run: |
+          cd openapi-researchment/src/clients/javascript &&
+          sed -i "s/\"name\": \"to_do_api\"/\"name\": \"\@luisbar180492\/github\-package\-registry\"/g" package.json
+      - name: Setup node version and registry url
+        uses: actions/setup-node@v3
+        with:
+          node-version: '12.x'
+          registry-url: 'https://npm.pkg.github.com'
+      - name: Install production dependencies
+        run: cd openapi-researchment/src/clients/javascript && npm i
+      - name: Deploy to GitHub packages
+        run: cd openapi-researchment/src/clients/javascript && npm publish
