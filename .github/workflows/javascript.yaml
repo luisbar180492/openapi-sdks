@@ -13,7 +13,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '12.x'
+          registry-url: 'https://npm.pkg.github.com'
       - name: Install production dependencies
         run: cd src/sdks/javascript && npm i
       - name: Deploy to GitHub packages
-        run: cd src/sdks/javascript && npm_config_registry=https://npm.pkg.github.com/luisbar180492 npm publish
+        run: cd src/sdks/javascript && npm publish
