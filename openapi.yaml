@@ -1,0 +1,158 @@
+openapi: "3.0.0"
+
+info:
+  version: 1.0.0
+  title: To Do API
+  description: A To Do API example which demonstrate features in the OpenAPI 3.0 specification
+  termsOfService: http://swagger.io/terms/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+
+servers:
+  - url: http://localhost:3000/api
+
+tags:
+  - name: to do
+    description: The to do endpoint
+
+paths:
+  /toDo:
+    get:
+      x-response: "toDoItems.slice(0, limit)"
+      tags:
+        - to do
+      description: |
+        Returns all to do items.
+      operationId: getMany
+      parameters:
+        - name: limit
+          in: query
+          description: maximum number of results to return
+          required: false
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ToDoItems'
+        default:
+          description: failed response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      x-response: "{...toDoItems.push({ ...toDoItem, id: uuidv4(), status: 'pending' })}"
+      tags:
+        - to do
+      description: Creates a new to do item
+      operationId: createOne
+      requestBody:
+        description: To do item to create
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ToDoItem'
+      responses:
+        '200':
+          description: successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ToDoItem'
+        default:
+          description: failed response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /toDo/{id}:
+    get:
+      x-response: "toDoItems.find(item => item.id === id)"
+      tags:
+        - to do
+      description: Returns a to do item by id
+      operationId: getOne
+      parameters:
+        - name: id
+          in: path
+          description: ID of to do item to return
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ToDoItem'
+        default:
+          description: failed response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      x-response: "toDoItems.splice(toDoItems.findIndex(item => item.id === id), 1)"
+      tags:
+        - to do
+      description: Deletes a to do item by id
+      operationId: deleteOne
+      parameters:
+        - name: id
+          in: path
+          description: ID of to do item to delete
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '204':
+          description: successful response
+        default:
+          description: failed response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    ToDoItems:
+      type: array
+      items:
+        $ref: '#/components/schemas/ToDoItem'
+
+    ToDoItem:
+      type: object
+      required:
+        - name
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        status:
+          type: string    
+
+    Error:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string

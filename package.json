@@ -1,0 +1,31 @@
+{
+  "name": "openapi-sdk",
+  "version": "1.0.0",
+  "description": "Tutorial for publishing SDKs generated from OpenAPI specs on Github Package Registry using Github Actions",
+  "scripts": {
+    "generate:java": "openapi-generator-cli generate -i ./openapi.yaml -o ./src/sdks/java -g java",
+    "generate:javascript": "openapi-generator-cli generate -i ./openapi.yaml -o ./src/sdks/javascript -g javascript  -t ./src/templates/javascript",
+    "generate:csharp": "openapi-generator-cli generate -i ./openapi.yaml -o ./src/sdks/csharp -g csharp",
+    "generate:clients": "npm run generate:java && npm run generate:javascript && npm run generate:csharp"
+  },
+  "keywords": [
+    "OpenAPI",
+    "Swagger",
+    "SwaggerUI",
+    "OpenAPI-Generator",
+    "OpenAPI-Generator-Cli",
+    "OpenAPI-Generator-Java",
+    "OpenAPI-Generator-JavaScript",
+    "OpenAPI-Generator-CSharp",
+    "Github Package Resgistry",
+    "Github Actions"
+  ],
+  "author": {
+    "name": "Luis Angel Barrancos Ortiz (luisbar)",
+    "email": "luisbar180492@gmail.com"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@openapitools/openapi-generator-cli": "2.4.26"
+  }
+}
