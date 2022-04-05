@@ -9,18 +9,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      - name: Fetch submodule
-        run: git submodule update --init
-      - name: Update package name on package.json file
-        run: |
-          cd openapi-researchment/src/clients/javascript &&
-          sed -i "s/\"name\": \"to_do_api\"/\"name\": \"\@luisbar180492\/github\-package\-registry\"/g" package.json
       - name: Setup node version and registry url
         uses: actions/setup-node@v3
         with:
           node-version: '12.x'
-          registry-url: 'https://npm.pkg.github.com'
       - name: Install production dependencies
-        run: cd openapi-researchment/src/clients/javascript && npm i
+        run: cd src/sdks/javascript && npm i
       - name: Deploy to GitHub packages
-        run: cd openapi-researchment/src/clients/javascript && npm publish
+        run: cd src/sdks/javascript && npm_config_registry=https://npm.pkg.github.com/luisbar180492 npm publish
