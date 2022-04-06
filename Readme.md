@@ -25,3 +25,27 @@
  - If you want to customize the code generate, you could modify the templates which are located on `templates/*`
  - If you want to modify another files, you can download the templates [here](https://github.com/OpenAPITools/openapi-generator/tree/master/modules/openapi-generator/src/main/resources)
  - Templates were built using [Mustache](https://mustache.github.io)
+
+## How to use the Javascript SDK?
+
+- Create a node project
+	```bash
+	mkdir new-project && cd ./new-project && npm init -y
+	```
+
+- Create or edit the `.npmrc` file to include a line specifying GitHub Packages URL and the account owner, as shown the following line
+	```
+	registry=https://npm.pkg.github.com/luisbar180492
+	```
+        
+- Authenticate using the user and token (you have to create the token on Github)
+	```bash
+	npm login --scope=@luisbar180492 --registry=https://npm.pkg.github.com
+	```
+        
+- Install de package
+	```bash
+	npm install @luisbar180492/openapi-sdk@1.0.0
+	```
+
+Do not forget to change the owner name by yours
