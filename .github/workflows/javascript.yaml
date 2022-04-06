@@ -15,6 +15,6 @@ jobs:
           node-version: '12.x'
           registry-url: 'https://npm.pkg.github.com'
       - name: Install production dependencies
-        run: cd src/sdks/javascript && npm i
+        run: cd src/sdks/javascript && npm i --production
       - name: Deploy to GitHub packages
         run: cd src/sdks/javascript && npm publish
