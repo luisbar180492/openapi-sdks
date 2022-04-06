@@ -19,7 +19,7 @@ To publish the library as a [npm](https://www.npmjs.com/), please follow the pro
 Then install it via:
 
 ```shell
-npm install openapi-sdk --save
+npm install @luisbar180492/openapi-sdk --save
 ```
 
 Finally, you need to build the module:
@@ -98,7 +98,7 @@ module: {
 Please follow the [installation](#installation) instruction and execute the following JS code:
 
 ```javascript
-var ToDoApi = require('openapi-sdk');
+var ToDoApi = require('@luisbar180492/openapi-sdk');
 
 
 var api = new ToDoApi.ToDoApi()
