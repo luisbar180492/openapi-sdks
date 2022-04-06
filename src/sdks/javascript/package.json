@@ -4,6 +4,7 @@
   "description": "A_To_Do_API_example_which_demonstrate_features_in_the_OpenAPI_3_0_specification",
   "license": "Apache 2.0",
   "scripts": {
+    "build": "babel src -d dist",
     "prepare": "npm run build",
     "test": "mocha --require @babel/register --recursive"
   },
