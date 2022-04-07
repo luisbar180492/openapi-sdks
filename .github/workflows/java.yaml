@@ -4,28 +4,12 @@ on:
 jobs:
   test-build-deploy:
     runs-on: ubuntu-latest
-    env:
-      CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
-      CLIENT_ID: ${{ secrets.CLIENT_ID }}
-      API_KEY: ${{ secrets.API_KEY }}
-      SIGNER_HANDLE: wMsh6fiXfZeTKYPfpighcSpAj8oE1khvan
-      SECRET: ${{ secrets.SECRET }}
-      PUBLIC: ${{ secrets.PUBLIC }}
-      SCHEME: eddsa-ed25519
-      WALLET_HANDLE: $5712345678
-      CHANNEL_SMS: 5712345678
-      EMAIL: example@minka.io
-      BANK_ACCOUNT_NUMBER: 12312321
-      BANK_BICFI: 8754
-      GITHUB_TOKEN: ${{ github.token }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Set up JDK and Maven settings
+      - name: Set up JDK
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
-      - name: Build and deploy to GitHub Packages Apache Maven using JDK 1.7
-        run: cd java-sdk && mvn deploy -Pprofile-jdk1.7
-      - name: Build and deploy to GitHub Packages Apache Maven using JDK 1.8
-        run: cd java-sdk && mvn deploy -Pprofile-jdk1.8        
+      - name: Build and deploy to GitHub
+        run: cd src/sdks/java && mvn deploy

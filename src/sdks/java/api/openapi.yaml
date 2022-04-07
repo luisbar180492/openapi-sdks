@@ -1,0 +1,168 @@
+openapi: 3.0.0
+info:
+  description: A To Do API example which demonstrate features in the OpenAPI 3.0 specification
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: To Do API
+  version: 1.0.0
+servers:
+- url: http://localhost:3000/api
+tags:
+- description: The to do endpoint
+  name: to do
+paths:
+  /toDo:
+    get:
+      description: |
+        Returns all to do items.
+      operationId: getMany
+      parameters:
+      - description: maximum number of results to return
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ToDoItems'
+                type: array
+          description: successful response
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: failed response
+      tags:
+      - to do
+      x-response: toDoItems.slice(0, limit)
+      x-accepts: application/json
+    post:
+      description: Creates a new to do item
+      operationId: createOne
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ToDoItem'
+        description: To do item to create
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ToDoItem'
+          description: successful response
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: failed response
+      tags:
+      - to do
+      x-response: '{...toDoItems.push({ ...toDoItem, id: uuidv4(), status: ''pending''
+        })}'
+      x-contentType: application/json
+      x-accepts: application/json
+  /toDo/{id}:
+    delete:
+      description: Deletes a to do item by id
+      operationId: deleteOne
+      parameters:
+      - description: ID of to do item to delete
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: successful response
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: failed response
+      tags:
+      - to do
+      x-response: toDoItems.splice(toDoItems.findIndex(item => item.id === id), 1)
+      x-accepts: application/json
+    get:
+      description: Returns a to do item by id
+      operationId: getOne
+      parameters:
+      - description: ID of to do item to return
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ToDoItem'
+          description: successful response
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: failed response
+      tags:
+      - to do
+      x-response: toDoItems.find(item => item.id === id)
+      x-accepts: application/json
+components:
+  schemas:
+    ToDoItems:
+      items:
+        $ref: '#/components/schemas/ToDoItem'
+      type: array
+    ToDoItem:
+      example:
+        name: name
+        id: id
+        status: status
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        status:
+          type: string
+      required:
+      - name
+      type: object
+    Error:
+      properties:
+        code:
+          format: int32
+          type: integer
+        message:
+          type: string
+      required:
+      - code
+      - message
+      type: object
+
