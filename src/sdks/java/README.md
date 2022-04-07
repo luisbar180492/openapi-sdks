@@ -1,8 +1,8 @@
-# openapi-java-client
+# openapi-sdk
 
 To Do API
-- API version: 1.0.0
-  - Build date: 2022-04-06T20:01:52.464668-04:00[America/La_Paz]
+- API version: 1.0.19
+  - Build date: 2022-04-11T21:15:39.564440-04:00[America/La_Paz]
 
 A To Do API example which demonstrate features in the OpenAPI 3.0 specification
 
@@ -13,7 +13,7 @@ A To Do API example which demonstrate features in the OpenAPI 3.0 specification
 ## Requirements
 
 Building the API client library requires:
-1. Java 1.7+
+1. Java 1.8+
 2. Maven (3.8.3+)/Gradle (7.2+)
 
 ## Installation
@@ -39,8 +39,8 @@ Add this dependency to your project's POM:
 ```xml
 <dependency>
   <groupId>org.openapitools</groupId>
-  <artifactId>openapi-java-client</artifactId>
-  <version>1.0.0</version>
+  <artifactId>openapi-sdk</artifactId>
+  <version>1.0.19</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -51,12 +51,12 @@ Add this dependency to your project's build file:
 
 ```groovy
   repositories {
-    mavenCentral()     // Needed if the 'openapi-java-client' jar has been published to maven central.
-    mavenLocal()       // Needed if the 'openapi-java-client' jar has been published to the local maven repo.
+    mavenCentral()     // Needed if the 'openapi-sdk' jar has been published to maven central.
+    mavenLocal()       // Needed if the 'openapi-sdk' jar has been published to the local maven repo.
   }
 
   dependencies {
-     implementation "org.openapitools:openapi-java-client:1.0.0"
+     implementation "org.openapitools:openapi-sdk:1.0.19"
   }
 ```
 
@@ -70,7 +70,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/openapi-java-client-1.0.0.jar`
+* `target/openapi-sdk-1.0.19.jar`
 * `target/lib/*.jar`
 
 ## Getting Started

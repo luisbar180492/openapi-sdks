@@ -16,9 +16,11 @@
 
     `npm run generate:clients`
 
-## Pitfalls
+## Gotchas
 
-- If you receive error 405 error when the javascript SDK is being deployed, you have to check that the package name contains the owner name before the name of the package, and it should match with the Github user
+- Do not forget to specify the owner of the package before the package name, for instance `@owner/package`
+- If you want to push your Javascript code to a repository using a different name of your package name, you have to set the `repository` property on the `package.json` file
+- If you reveive error 429 when you are trying to deploy Java SDK, that is because you are trying to upload a repeated version of the artifact
 
 ## How to customized generated code?
 
@@ -35,7 +37,7 @@
 
 - Create or edit the `.npmrc` file to include a line specifying GitHub Packages URL and the account owner, as shown the following line
 	```
-	registry=https://npm.pkg.github.com/luisbar180492
+	@luisbar180492:registry=https://npm.pkg.github.com
 	```
         
 - Authenticate using the user and token (you have to create the token on Github)
@@ -45,7 +47,7 @@
         
 - Install de package
 	```bash
-	npm install @luisbar180492/openapi-sdk@1.0.0
+	npm install openapi-sdk@1.0.0
 	```
 
 Do not forget to change the owner name by yours

@@ -27,7 +27,7 @@ To publish the library as a [npm](https://www.npmjs.com/), please follow the pro
 Then install it via:
 
 ```shell
-npm install @luisbar180492/openapi-sdk --save
+npm install openapi-sdk --save
 ```
 
 Finally, you need to build the module:
@@ -106,7 +106,7 @@ module: {
 Please follow the [installation](#installation) instruction and execute the following JS code:
 
 ```javascript
-var {{{moduleName}}} = require('@luisbar180492/openapi-sdk');
+var {{{moduleName}}} = require('openapi-sdk');
 {{#apiInfo}}{{#apis}}{{#-first}}{{#operations}}{{#operation}}{{#-first}}
 {{#hasAuthMethods}}
 var defaultClient = {{{moduleName}}}.ApiClient.instance;

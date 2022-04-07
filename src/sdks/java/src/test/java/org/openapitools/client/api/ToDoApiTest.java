@@ -17,8 +17,8 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.model.Error;
 import org.openapitools.client.model.ToDoItem;
 import java.util.UUID;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,70 +28,57 @@ import java.util.Map;
 /**
  * API tests for ToDoApi
  */
-@Ignore
+@Disabled
 public class ToDoApiTest {
 
     private final ToDoApi api = new ToDoApi();
 
-    
     /**
-     * 
-     *
      * Creates a new to do item
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void createOneTest() throws ApiException {
         ToDoItem toDoItem = null;
-                ToDoItem response = api.createOne(toDoItem);
+        ToDoItem response = api.createOne(toDoItem);
         // TODO: test validations
     }
-    
+
     /**
-     * 
-     *
      * Deletes a to do item by id
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void deleteOneTest() throws ApiException {
         UUID id = null;
-                api.deleteOne(id);
+        api.deleteOne(id);
         // TODO: test validations
     }
-    
+
     /**
-     * 
-     *
      * Returns all to do items. 
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getManyTest() throws ApiException {
         Integer limit = null;
-                List<List<ToDoItem>> response = api.getMany(limit);
+        List<List<ToDoItem>> response = api.getMany(limit);
         // TODO: test validations
     }
-    
+
     /**
-     * 
-     *
      * Returns a to do item by id
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getOneTest() throws ApiException {
         UUID id = null;
-                ToDoItem response = api.getOne(id);
+        ToDoItem response = api.getOne(id);
         // TODO: test validations
     }
-    
+
 }

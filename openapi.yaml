@@ -1,7 +1,7 @@
 openapi: "3.0.0"
 
 info:
-  version: 1.0.0
+  version: 1.0.19
   title: To Do API
   description: A To Do API example which demonstrate features in the OpenAPI 3.0 specification
   termsOfService: http://swagger.io/terms/

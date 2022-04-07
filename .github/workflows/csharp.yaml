@@ -1,4 +1,4 @@
-name: Build and deploy csharp SDK
+name: Build and deploy Csharp SDK
 on:
   workflow_dispatch:
 jobs:
