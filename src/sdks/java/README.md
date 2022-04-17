@@ -1,8 +1,8 @@
 # openapi-sdk
 
 To Do API
-- API version: 1.0.19
-  - Build date: 2022-04-11T21:15:39.564440-04:00[America/La_Paz]
+- API version: 1.0.20
+  - Build date: 2022-04-17T13:07:48.152712-04:00[America/La_Paz]
 
 A To Do API example which demonstrate features in the OpenAPI 3.0 specification
 
@@ -40,7 +40,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>org.openapitools</groupId>
   <artifactId>openapi-sdk</artifactId>
-  <version>1.0.19</version>
+  <version>1.0.20</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -56,7 +56,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "org.openapitools:openapi-sdk:1.0.19"
+     implementation "org.openapitools:openapi-sdk:1.0.20"
   }
 ```
 
@@ -70,7 +70,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/openapi-sdk-1.0.19.jar`
+* `target/openapi-sdk-1.0.20.jar`
 * `target/lib/*.jar`
 
 ## Getting Started

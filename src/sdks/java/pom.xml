@@ -4,8 +4,8 @@
     <groupId>org.openapitools</groupId>
     <artifactId>openapi-sdk</artifactId>
     <packaging>jar</packaging>
-    <name>openapi-sdkdasds</name>
-    <version>1.0.19</version>
+    <name>openapi-sdk</name>
+    <version>1.0.20</version>
     <url>https://github.com/openapitools/openapi-generator</url>
     <description>OpenAPI Java</description>
     <scm>
