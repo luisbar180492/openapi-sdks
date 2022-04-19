@@ -5,7 +5,7 @@
     <artifactId>openapi-sdk</artifactId>
     <packaging>jar</packaging>
     <name>openapi-sdk</name>
-    <version>1.0.22</version>
+    <version>1.0.23</version>
     <url>https://github.com/openapitools/openapi-generator</url>
     <description>OpenAPI Java</description>
     <scm>
