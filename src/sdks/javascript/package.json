@@ -1,6 +1,6 @@
 {
   "name": "@luisbar180492/openapi-sdk",
-  "version": "1.0.5",
+  "version": "1.0.24",
   "description": "A_To_Do_API_example_which_demonstrate_features_in_the_OpenAPI_3_0_specification",
   "license": "Apache 2.0",
   "main": "dist/index.js",
