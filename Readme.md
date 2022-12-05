@@ -51,3 +51,55 @@
 	```
 
 Do not forget to change the owner name by yours
+
+## How to use the Java SDK?
+
+- Create a new project with Maven
+- Create Github token from Settings > Developer Settings > Personal Access Token
+  - You must use a personal access token (classic) with the appropriate scopes to publish and install packages in GitHub Packages
+- All the steps that are explained down below must be applied in the `settings.xml` file, which is located in `YOUR_USER_HOME/.m2/` (e.g. `/Users/guest/.m2/settings.xml`)
+- Copy the user and token got from Github
+```xml
+<settings>
+  <servers>
+    <server>
+      <id>github</id>
+      <username>YOUR_USERNAME</username>
+      <password>YOUR_TOKEN</password>
+    </server>
+  </servers>
+</settings>
+```
+- Copy the following profile item into your profiles tag
+```xml
+<profile>
+	<id>github</id>
+	<repositories>
+		<repository>
+			<id>central</id>
+			<url>https://repo1.maven.org/maven2</url>
+		</repository>
+		<repository>
+			<id>github</id>
+			<url>https://maven.pkg.github.com/OWNER/REPOSITORY</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+</profile>
+```
+- Activate the profile pasting the following snippet
+```xml
+<activeProfiles>
+  <activeProfile>github</activeProfile>
+</activeProfiles>
+```
+- Copy the dependency into your `pom.xml` file
+```xml
+<dependency>
+  <groupId>org.openapitools</groupId>
+  <artifactId>openapi-sdk</artifactId>
+  <version>1.0.24</version>
+</dependency>
+```
