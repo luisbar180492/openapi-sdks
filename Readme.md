@@ -47,8 +47,10 @@
         
 - Install de package
 	```bash
-	npm install openapi-sdk@1.0.0
+	npm install @luisbar180492/openapi-sdk@1.0.24
 	```
+
+- More info [here](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry)
 
 Do not forget to change the owner name by yours
 
@@ -81,7 +83,7 @@ Do not forget to change the owner name by yours
 		</repository>
 		<repository>
 			<id>github</id>
-			<url>https://maven.pkg.github.com/OWNER/REPOSITORY</url>
+			<url>https://maven.pkg.github.com/ORGANIZATION_NAME_OR_USERNAME/packages</url>
 			<snapshots>
 				<enabled>true</enabled>
 			</snapshots>
@@ -103,3 +105,5 @@ Do not forget to change the owner name by yours
   <version>1.0.24</version>
 </dependency>
 ```
+
+- More info [here](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry)
