@@ -9,16 +9,16 @@ jobs:
         dotnet: [ '5.0.x' ]
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
     - name: Setup dotnet ${{ matrix.dotnet-version }}
-      uses: actions/setup-dotnet@v1.6.0
+      uses: actions/setup-dotnet@v3
       with:
         dotnet-version: ${{ matrix.dotnet-version }}
     - name: Authenticate with GitHub
-      uses: actions/github-authenticate@v2
+      uses: actions/github-authenticate@v3
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
     - name: Build
-      run: cd src/clients/csharp && dotnet pack
+      run: cd src/sdks/csharp && dotnet pack
     - name: Deploy to Github Packages
-      run: cd src/clients/csharp && dotnet nuget push "Org.OpenAPITools/bin/Release/*.nupkg" --api-key ${{ github.token }} --source "github"
+      run: cd src/sdks/csharp && dotnet nuget push "Org.OpenAPITools/bin/Release/*.nupkg" --api-key ${{ github.token }} --source "github"
