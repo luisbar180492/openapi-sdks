@@ -15,6 +15,6 @@ jobs:
       with:
         dotnet-version: ${{ matrix.dotnet-version }}
     - name: Build
-      run: cd src/sdks/csharp && dotnet pack
+      run: cd ./src/sdks/csharp && dotnet pack
     - name: Deploy to Github Packages
-      run: cd src/sdks/csharp && dotnet nuget push "Org.OpenAPITools/bin/Release/*.nupkg" --api-key ${{ github.token }} --source "github"
+      run: cd ./src/sdks/csharp && dotnet nuget push "Org.OpenAPITools/bin/Release/*.nupkg" --api-key ${{ github.token }} --source "github"
