@@ -15,7 +15,7 @@ jobs:
       with:
         dotnet-version: ${{ matrix.dotnet-version }}
     - name: Authenticate with GitHub
-      uses: actions/github-authenticate@v3
+      uses: actions/github-authenticate@v1
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
     - name: Build
