@@ -77,7 +77,7 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">maximum number of results to return (optional)</param>
         /// <returns>List&lt;List&gt;</returns>
-        List<List> GetMany(int? limit = default(int?));
+        List GetMany(int? limit = default(int?));
 
         /// <summary>
         /// 
@@ -88,7 +88,7 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">maximum number of results to return (optional)</param>
         /// <returns>ApiResponse of List&lt;List&gt;</returns>
-        ApiResponse<List<List>> GetManyWithHttpInfo(int? limit = default(int?));
+        ApiResponse<List> GetManyWithHttpInfo(int? limit = default(int?));
         /// <summary>
         /// 
         /// </summary>
@@ -175,7 +175,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="limit">maximum number of results to return (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;List&gt;</returns>
-        System.Threading.Tasks.Task<List<List>> GetManyAsync(int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List> GetManyAsync(int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -187,7 +187,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="limit">maximum number of results to return (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;List&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<List>>> GetManyWithHttpInfoAsync(int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List>> GetManyWithHttpInfoAsync(int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -593,9 +593,9 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">maximum number of results to return (optional)</param>
         /// <returns>List&lt;List&gt;</returns>
-        public List<List> GetMany(int? limit = default(int?))
+        public List GetMany(int? limit = default(int?))
         {
-            Org.OpenAPITools.Client.ApiResponse<List<List>> localVarResponse = GetManyWithHttpInfo(limit);
+            Org.OpenAPITools.Client.ApiResponse<List> localVarResponse = GetManyWithHttpInfo(limit);
             return localVarResponse.Data;
         }
 
@@ -605,7 +605,7 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">maximum number of results to return (optional)</param>
         /// <returns>ApiResponse of List&lt;List&gt;</returns>
-        public Org.OpenAPITools.Client.ApiResponse<List<List>> GetManyWithHttpInfo(int? limit = default(int?))
+        public Org.OpenAPITools.Client.ApiResponse<List> GetManyWithHttpInfo(int? limit = default(int?))
         {
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 
@@ -636,7 +636,7 @@ namespace Org.OpenAPITools.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<List>>("/toDo", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List>("/toDo", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetMany", localVarResponse);
@@ -656,9 +656,9 @@ namespace Org.OpenAPITools.Api
         /// <param name="limit">maximum number of results to return (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;List&gt;</returns>
-        public async System.Threading.Tasks.Task<List<List>> GetManyAsync(int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List> GetManyAsync(int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Org.OpenAPITools.Client.ApiResponse<List<List>> localVarResponse = await GetManyWithHttpInfoAsync(limit, cancellationToken).ConfigureAwait(false);
+            Org.OpenAPITools.Client.ApiResponse<List> localVarResponse = await GetManyWithHttpInfoAsync(limit, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -669,7 +669,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="limit">maximum number of results to return (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;List&gt;)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<List<List>>> GetManyWithHttpInfoAsync(int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<List>> GetManyWithHttpInfoAsync(int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
@@ -701,7 +701,7 @@ namespace Org.OpenAPITools.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<List>>("/toDo", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List>("/toDo", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
