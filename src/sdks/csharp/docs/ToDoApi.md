@@ -10,9 +10,8 @@ Method | HTTP request | Description
 [**GetOne**](ToDoApi.md#getone) | **GET** /toDo/{id} | 
 
 
-
-## CreateOne
-
+<a name="createone"></a>
+# **CreateOne**
 > ToDoItem CreateOne (ToDoItem toDoItem)
 
 
@@ -20,9 +19,8 @@ Method | HTTP request | Description
 Creates a new to do item
 
 ### Example
-
 ```csharp
-using System.Collections.Generic;
+using System;
 using System.Diagnostics;
 using Org.OpenAPITools.Api;
 using Org.OpenAPITools.Client;
@@ -32,10 +30,9 @@ namespace Example
 {
     public class CreateOneExample
     {
-        public static void Main()
+        public void main()
         {
-            Configuration.Default.BasePath = "http://localhost:3000/api";
-            var apiInstance = new ToDoApi(Configuration.Default);
+            var apiInstance = new ToDoApi();
             var toDoItem = new ToDoItem(); // ToDoItem | To do item to create
 
             try
@@ -43,11 +40,9 @@ namespace Example
                 ToDoItem result = apiInstance.CreateOne(toDoItem);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (Exception e)
             {
                 Debug.Print("Exception when calling ToDoApi.CreateOne: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
             }
         }
     }
@@ -55,7 +50,6 @@ namespace Example
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -71,34 +65,22 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | successful response |  -  |
-| **0** | failed response |  -  |
-
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## DeleteOne
-
-> void DeleteOne (Guid id)
+<a name="deleteone"></a>
+# **DeleteOne**
+> void DeleteOne (Guid? id)
 
 
 
 Deletes a to do item by id
 
 ### Example
-
 ```csharp
-using System.Collections.Generic;
+using System;
 using System.Diagnostics;
 using Org.OpenAPITools.Api;
 using Org.OpenAPITools.Client;
@@ -108,21 +90,18 @@ namespace Example
 {
     public class DeleteOneExample
     {
-        public static void Main()
+        public void main()
         {
-            Configuration.Default.BasePath = "http://localhost:3000/api";
-            var apiInstance = new ToDoApi(Configuration.Default);
-            var id = "id_example";  // Guid | ID of to do item to delete
+            var apiInstance = new ToDoApi();
+            var id = "id_example";  // Guid? | ID of to do item to delete
 
             try
             {
                 apiInstance.DeleteOne(id);
             }
-            catch (ApiException e)
+            catch (Exception e)
             {
                 Debug.Print("Exception when calling ToDoApi.DeleteOne: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
             }
         }
     }
@@ -131,10 +110,9 @@ namespace Example
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Guid**| ID of to do item to delete | 
+ **id** | **Guid?**| ID of to do item to delete | 
 
 ### Return type
 
@@ -146,34 +124,22 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **204** | successful response |  -  |
-| **0** | failed response |  -  |
-
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetMany
-
-> List&lt;List&gt; GetMany (int? limit = null)
+<a name="getmany"></a>
+# **GetMany**
+> List<List> GetMany (int? limit)
 
 
 
 Returns all to do items. 
 
 ### Example
-
 ```csharp
-using System.Collections.Generic;
+using System;
 using System.Diagnostics;
 using Org.OpenAPITools.Api;
 using Org.OpenAPITools.Client;
@@ -183,22 +149,19 @@ namespace Example
 {
     public class GetManyExample
     {
-        public static void Main()
+        public void main()
         {
-            Configuration.Default.BasePath = "http://localhost:3000/api";
-            var apiInstance = new ToDoApi(Configuration.Default);
+            var apiInstance = new ToDoApi();
             var limit = 56;  // int? | maximum number of results to return (optional) 
 
             try
             {
-                List<List> result = apiInstance.GetMany(limit);
+                List&lt;List&gt; result = apiInstance.GetMany(limit);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (Exception e)
             {
                 Debug.Print("Exception when calling ToDoApi.GetMany: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
             }
         }
     }
@@ -206,7 +169,6 @@ namespace Example
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -222,34 +184,22 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | successful response |  -  |
-| **0** | failed response |  -  |
-
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetOne
-
-> ToDoItem GetOne (Guid id)
+<a name="getone"></a>
+# **GetOne**
+> ToDoItem GetOne (Guid? id)
 
 
 
 Returns a to do item by id
 
 ### Example
-
 ```csharp
-using System.Collections.Generic;
+using System;
 using System.Diagnostics;
 using Org.OpenAPITools.Api;
 using Org.OpenAPITools.Client;
@@ -259,22 +209,19 @@ namespace Example
 {
     public class GetOneExample
     {
-        public static void Main()
+        public void main()
         {
-            Configuration.Default.BasePath = "http://localhost:3000/api";
-            var apiInstance = new ToDoApi(Configuration.Default);
-            var id = "id_example";  // Guid | ID of to do item to return
+            var apiInstance = new ToDoApi();
+            var id = "id_example";  // Guid? | ID of to do item to return
 
             try
             {
                 ToDoItem result = apiInstance.GetOne(id);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (Exception e)
             {
                 Debug.Print("Exception when calling ToDoApi.GetOne: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
             }
         }
     }
@@ -283,10 +230,9 @@ namespace Example
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Guid**| ID of to do item to return | 
+ **id** | **Guid?**| ID of to do item to return | 
 
 ### Return type
 
@@ -298,18 +244,8 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | successful response |  -  |
-| **0** | failed response |  -  |
-
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
