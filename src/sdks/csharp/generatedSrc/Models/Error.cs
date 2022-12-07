@@ -23,7 +23,7 @@ using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = Org.OpenAPITools.Client.OpenAPIDateConverter;
 
-namespace Org.OpenAPITools.Model
+namespace Org.OpenAPITools.Models
 {
     /// <summary>
     /// Error
@@ -45,10 +45,7 @@ namespace Org.OpenAPITools.Model
         {
             this.Code = code;
             // to ensure "message" is required (not null)
-            if (message == null) {
-                throw new ArgumentNullException("message is a required property for Error and cannot be null");
-            }
-            this.Message = message;
+            this.Message = message ?? throw new ArgumentNullException("message is a required property for Error and cannot be null");
         }
 
         /// <summary>
@@ -69,7 +66,7 @@ namespace Org.OpenAPITools.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
             sb.Append("class Error {\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  Message: ").Append(Message).Append("\n");
@@ -104,9 +101,8 @@ namespace Org.OpenAPITools.Model
         public bool Equals(Error input)
         {
             if (input == null)
-            {
                 return false;
-            }
+
             return 
                 (
                     this.Code == input.Code ||
@@ -128,11 +124,9 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Code.GetHashCode();
+                hashCode = hashCode * 59 + this.Code.GetHashCode();
                 if (this.Message != null)
-                {
-                    hashCode = (hashCode * 59) + this.Message.GetHashCode();
-                }
+                    hashCode = hashCode * 59 + this.Message.GetHashCode();
                 return hashCode;
             }
         }
@@ -142,7 +136,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

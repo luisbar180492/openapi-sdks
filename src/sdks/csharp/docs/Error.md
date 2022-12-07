@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.Error
+# Org.OpenAPITools.Models.Error
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Api.ToDoApi
+# Org.OpenAPITools.Apis.ToDoApi
 
 All URIs are relative to *http://localhost:3000/api*
 
@@ -22,9 +22,9 @@ Creates a new to do item
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Apis;
 using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Org.OpenAPITools.Models;
 
 namespace Example
 {
@@ -93,9 +93,9 @@ Deletes a to do item by id
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Apis;
 using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Org.OpenAPITools.Models;
 
 namespace Example
 {
@@ -163,9 +163,9 @@ Returns all to do items.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Apis;
 using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Org.OpenAPITools.Models;
 
 namespace Example
 {
@@ -234,9 +234,9 @@ Returns a to do item by id
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Apis;
 using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Org.OpenAPITools.Models;
 
 namespace Example
 {

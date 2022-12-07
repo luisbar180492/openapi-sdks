@@ -17,9 +17,9 @@ using RestSharp;
 using Xunit;
 
 using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Apis;
 // uncomment below to import models
-//using Org.OpenAPITools.Model;
+//using Org.OpenAPITools.Models;
 
 namespace Org.OpenAPITools.Test.Api
 {

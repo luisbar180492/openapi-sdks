@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.ToDoItem
+# Org.OpenAPITools.Models.ToDoItem
 
 ## Properties
 
