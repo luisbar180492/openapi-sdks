@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace Org.OpenAPITools.Client
+namespace Client
 {
     /// <summary>
     /// Represents a set of configuration settings

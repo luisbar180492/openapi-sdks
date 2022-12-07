@@ -20,7 +20,7 @@ Creates a new to do item
 
 ### Example
 ```csharp
-using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using Org.OpenAPITools.Api;
 using Org.OpenAPITools.Client;
@@ -30,9 +30,11 @@ namespace Example
 {
     public class CreateOneExample
     {
-        public void main()
+        public static void Main()
         {
-            var apiInstance = new ToDoApi();
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:3000/api";
+            var apiInstance = new ToDoApi(config);
             var toDoItem = new ToDoItem(); // ToDoItem | To do item to create
 
             try
@@ -40,9 +42,11 @@ namespace Example
                 ToDoItem result = apiInstance.CreateOne(toDoItem);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (ApiException  e)
             {
                 Debug.Print("Exception when calling ToDoApi.CreateOne: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
             }
         }
     }
@@ -68,11 +72,18 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | successful response |  -  |
+| **0** | failed response |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="deleteone"></a>
 # **DeleteOne**
-> void DeleteOne (Guid? id)
+> void DeleteOne (Guid id)
 
 
 
@@ -80,7 +91,7 @@ Deletes a to do item by id
 
 ### Example
 ```csharp
-using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using Org.OpenAPITools.Api;
 using Org.OpenAPITools.Client;
@@ -90,18 +101,22 @@ namespace Example
 {
     public class DeleteOneExample
     {
-        public void main()
+        public static void Main()
         {
-            var apiInstance = new ToDoApi();
-            var id = "id_example";  // Guid? | ID of to do item to delete
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:3000/api";
+            var apiInstance = new ToDoApi(config);
+            var id = "id_example";  // Guid | ID of to do item to delete
 
             try
             {
                 apiInstance.DeleteOne(id);
             }
-            catch (Exception e)
+            catch (ApiException  e)
             {
                 Debug.Print("Exception when calling ToDoApi.DeleteOne: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
             }
         }
     }
@@ -112,7 +127,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Guid?**| ID of to do item to delete | 
+ **id** | **Guid**| ID of to do item to delete | 
 
 ### Return type
 
@@ -127,11 +142,18 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | successful response |  -  |
+| **0** | failed response |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="getmany"></a>
 # **GetMany**
-> List<List> GetMany (int? limit)
+> List&lt;List&gt; GetMany (int? limit = null)
 
 
 
@@ -139,7 +161,7 @@ Returns all to do items.
 
 ### Example
 ```csharp
-using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using Org.OpenAPITools.Api;
 using Org.OpenAPITools.Client;
@@ -149,19 +171,23 @@ namespace Example
 {
     public class GetManyExample
     {
-        public void main()
+        public static void Main()
         {
-            var apiInstance = new ToDoApi();
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:3000/api";
+            var apiInstance = new ToDoApi(config);
             var limit = 56;  // int? | maximum number of results to return (optional) 
 
             try
             {
-                List&lt;List&gt; result = apiInstance.GetMany(limit);
+                List<List> result = apiInstance.GetMany(limit);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (ApiException  e)
             {
                 Debug.Print("Exception when calling ToDoApi.GetMany: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
             }
         }
     }
@@ -187,11 +213,18 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | successful response |  -  |
+| **0** | failed response |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="getone"></a>
 # **GetOne**
-> ToDoItem GetOne (Guid? id)
+> ToDoItem GetOne (Guid id)
 
 
 
@@ -199,7 +232,7 @@ Returns a to do item by id
 
 ### Example
 ```csharp
-using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using Org.OpenAPITools.Api;
 using Org.OpenAPITools.Client;
@@ -209,19 +242,23 @@ namespace Example
 {
     public class GetOneExample
     {
-        public void main()
+        public static void Main()
         {
-            var apiInstance = new ToDoApi();
-            var id = "id_example";  // Guid? | ID of to do item to return
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:3000/api";
+            var apiInstance = new ToDoApi(config);
+            var id = "id_example";  // Guid | ID of to do item to return
 
             try
             {
                 ToDoItem result = apiInstance.GetOne(id);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (ApiException  e)
             {
                 Debug.Print("Exception when calling ToDoApi.GetOne: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
             }
         }
     }
@@ -232,7 +269,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Guid?**| ID of to do item to return | 
+ **id** | **Guid**| ID of to do item to return | 
 
 ### Return type
 
@@ -246,6 +283,13 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | successful response |  -  |
+| **0** | failed response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
