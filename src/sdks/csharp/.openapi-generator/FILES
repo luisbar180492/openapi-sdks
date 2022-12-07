@@ -1,0 +1,14 @@
+.gitignore
+.openapi-generator-ignore
+README.md
+compile-mono.sh
+docs/Error.md
+docs/ToDoApi.md
+docs/ToDoItem.md
+src/main/CsharpDotNet2/Org/OpenAPITools/Api/ToDoApi.cs
+src/main/CsharpDotNet2/Org/OpenAPITools/Client/ApiClient.cs
+src/main/CsharpDotNet2/Org/OpenAPITools/Client/ApiException.cs
+src/main/CsharpDotNet2/Org/OpenAPITools/Client/Configuration.cs
+src/main/CsharpDotNet2/Org/OpenAPITools/Model/Error.cs
+src/main/CsharpDotNet2/Org/OpenAPITools/Model/ToDoItem.cs
+vendor/packages.config
