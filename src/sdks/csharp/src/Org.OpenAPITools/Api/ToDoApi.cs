@@ -76,7 +76,7 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">maximum number of results to return (optional)</param>
         /// <returns>List&lt;List&gt;</returns>
-        List<List> GetMany (int? limit = default(int?));
+        List<List<Object>> GetMany (int? limit = default(int?));
 
         /// <summary>
         /// 
@@ -87,7 +87,7 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">maximum number of results to return (optional)</param>
         /// <returns>ApiResponse of List&lt;List&gt;</returns>
-        ApiResponse<List<List>> GetManyWithHttpInfo (int? limit = default(int?));
+        ApiResponse<List<List<Object>>> GetManyWithHttpInfo (int? limit = default(int?));
         /// <summary>
         /// 
         /// </summary>
@@ -167,7 +167,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="limit">maximum number of results to return (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of List&lt;List&gt;</returns>
-        System.Threading.Tasks.Task<List<List>> GetManyAsync (int? limit = default(int?), CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<List<List<Object>>> GetManyAsync (int? limit = default(int?), CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// 
@@ -179,7 +179,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="limit">maximum number of results to return (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (List&lt;List&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<List>>> GetManyWithHttpInfoAsync (int? limit = default(int?), CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<List<Object>>>> GetManyWithHttpInfoAsync (int? limit = default(int?), CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -604,9 +604,9 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">maximum number of results to return (optional)</param>
         /// <returns>List&lt;List&gt;</returns>
-        public List<List> GetMany (int? limit = default(int?))
+        public List<List<Object>> GetMany (int? limit = default(int?))
         {
-             ApiResponse<List<List>> localVarResponse = GetManyWithHttpInfo(limit);
+             ApiResponse<List<List<Object>>> localVarResponse = GetManyWithHttpInfo(limit);
              return localVarResponse.Data;
         }
 
@@ -616,7 +616,7 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">maximum number of results to return (optional)</param>
         /// <returns>ApiResponse of List&lt;List&gt;</returns>
-        public ApiResponse<List<List>> GetManyWithHttpInfo (int? limit = default(int?))
+        public ApiResponse<List<List<Object>>> GetManyWithHttpInfo (int? limit = default(int?))
         {
 
             var localVarPath = "/toDo";
@@ -656,9 +656,9 @@ namespace Org.OpenAPITools.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<List>>(localVarStatusCode,
+            return new ApiResponse<List<List<Object>>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (List<List>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<List>)));
+                (List<List<Object>>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<List<Object>>)));
         }
 
         /// <summary>
@@ -668,9 +668,9 @@ namespace Org.OpenAPITools.Api
         /// <param name="limit">maximum number of results to return (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of List&lt;List&gt;</returns>
-        public async System.Threading.Tasks.Task<List<List>> GetManyAsync (int? limit = default(int?), CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<List<List<Object>>> GetManyAsync (int? limit = default(int?), CancellationToken cancellationToken = default(CancellationToken))
         {
-             ApiResponse<List<List>> localVarResponse = await GetManyWithHttpInfoAsync(limit, cancellationToken);
+             ApiResponse<List<List<Object>>> localVarResponse = await GetManyWithHttpInfoAsync(limit, cancellationToken);
              return localVarResponse.Data;
 
         }
@@ -682,7 +682,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="limit">maximum number of results to return (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
         /// <returns>Task of ApiResponse (List&lt;List&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<List>>> GetManyWithHttpInfoAsync (int? limit = default(int?), CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<ApiResponse<List<List<Object>>>> GetManyWithHttpInfoAsync (int? limit = default(int?), CancellationToken cancellationToken = default(CancellationToken))
         {
 
             var localVarPath = "/toDo";
@@ -722,9 +722,9 @@ namespace Org.OpenAPITools.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<List>>(localVarStatusCode,
+            return new ApiResponse<List<List<Object>>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (List<List>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<List>)));
+                (List<List<Object>>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<List<Object>>)));
         }
 
         /// <summary>
