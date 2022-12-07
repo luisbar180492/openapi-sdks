@@ -1,4 +1,5 @@
 .gitignore
+.openapi-generator-ignore
 .travis.yml
 Org.OpenAPITools.sln
 README.md
@@ -9,6 +10,9 @@ docs/ToDoApi.md
 docs/ToDoItem.md
 git_push.sh
 mono_nunit_test.sh
+src/Org.OpenAPITools.Test/Api/ToDoApiTests.cs
+src/Org.OpenAPITools.Test/Model/ErrorTests.cs
+src/Org.OpenAPITools.Test/Model/ToDoItemTests.cs
 src/Org.OpenAPITools.Test/Org.OpenAPITools.Test.csproj
 src/Org.OpenAPITools.Test/packages.config
 src/Org.OpenAPITools/Api/ToDoApi.cs
