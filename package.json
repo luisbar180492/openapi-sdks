@@ -5,7 +5,7 @@
   "scripts": {
     "generate:java": "openapi-generator-cli generate -i ./openapi.yaml -o ./src/sdks/java -g java --additional-properties=library=okhttp-gson -t ./src/templates/java",
     "generate:javascript": "openapi-generator-cli generate -i ./openapi.yaml -o ./src/sdks/javascript -g javascript  -t ./src/templates/javascript",
-    "generate:csharp": "openapi-generator-cli generate -i ./openapi.yaml -o ./src/sdks/csharp -g csharp-netcore -t ./src/templates/csharp",
+    "generate:csharp": "openapi-generator-cli generate -i ./openapi.yaml -o ./src/sdks/csharp -g csharp -t ./src/templates/csharp",
     "generate:clients": "npm run generate:java && npm run generate:javascript && npm run generate:csharp"
   },
   "keywords": [
