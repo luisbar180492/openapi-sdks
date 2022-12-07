@@ -19,6 +19,7 @@ The version of the OpenAPI document: 1.0.24
     <AssemblyName>Org.OpenAPITools</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <Target Name="Pack"></Target>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
