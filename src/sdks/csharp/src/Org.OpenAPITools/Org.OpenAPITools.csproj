@@ -40,6 +40,10 @@ The version of the OpenAPI document: 1.0.24
     <DocumentationFile>bin\Release\Org.OpenAPITools.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="NuGet.Build.Tasks.Pack" Version="5.9.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
