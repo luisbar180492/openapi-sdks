@@ -54,8 +54,8 @@ namespace Org.OpenAPITools.Api
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of to do item to delete</param>
-        /// <returns></returns>
-        void DeleteOne (Guid id);
+        /// <returns>ToDoItem</returns>
+        ToDoItem DeleteOne (Guid id);
 
         /// <summary>
         /// 
@@ -65,8 +65,8 @@ namespace Org.OpenAPITools.Api
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of to do item to delete</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteOneWithHttpInfo (Guid id);
+        /// <returns>ApiResponse of ToDoItem</returns>
+        ApiResponse<ToDoItem> DeleteOneWithHttpInfo (Guid id);
         /// <summary>
         /// 
         /// </summary>
@@ -75,8 +75,8 @@ namespace Org.OpenAPITools.Api
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">maximum number of results to return (optional)</param>
-        /// <returns>List&lt;List&gt;</returns>
-        List<List<Object>> GetMany (int? limit = default(int?));
+        /// <returns>List<ToDoItem></returns>
+        List<ToDoItem> GetMany (int? limit = default(int?));
 
         /// <summary>
         /// 
@@ -86,8 +86,8 @@ namespace Org.OpenAPITools.Api
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">maximum number of results to return (optional)</param>
-        /// <returns>ApiResponse of List&lt;List&gt;</returns>
-        ApiResponse<List<List<Object>>> GetManyWithHttpInfo (int? limit = default(int?));
+        /// <returns>ApiResponse of List<ToDoItem></returns>
+        ApiResponse<List<ToDoItem>> GetManyWithHttpInfo (int? limit = default(int?));
         /// <summary>
         /// 
         /// </summary>
@@ -143,8 +143,8 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of to do item to delete</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteOneAsync (Guid id, CancellationToken cancellationToken = default(CancellationToken));
+        /// <returns>Task of ToDoItem</returns>
+        System.Threading.Tasks.Task<ToDoItem> DeleteOneAsync (Guid id, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// 
@@ -155,8 +155,8 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of to do item to delete</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteOneWithHttpInfoAsync (Guid id, CancellationToken cancellationToken = default(CancellationToken));
+        /// <returns>Task of ApiResponse (ToDoItem)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ToDoItem>> DeleteOneWithHttpInfoAsync (Guid id, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -166,8 +166,8 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">maximum number of results to return (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of List&lt;List&gt;</returns>
-        System.Threading.Tasks.Task<List<List<Object>>> GetManyAsync (int? limit = default(int?), CancellationToken cancellationToken = default(CancellationToken));
+        /// <returns>Task of List<ToDoItem></returns>
+        System.Threading.Tasks.Task<List<ToDoItem>> GetManyAsync (int? limit = default(int?), CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// 
@@ -178,8 +178,8 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">maximum number of results to return (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of ApiResponse (List&lt;List&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<List<Object>>>> GetManyWithHttpInfoAsync (int? limit = default(int?), CancellationToken cancellationToken = default(CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;ToDoItem&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<ToDoItem>>> GetManyWithHttpInfoAsync (int? limit = default(int?), CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -470,10 +470,11 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of to do item to delete</param>
-        /// <returns></returns>
-        public void DeleteOne (Guid id)
+        /// <returns>ToDoItem</returns>
+        public ToDoItem DeleteOne (Guid id)
         {
-             DeleteOneWithHttpInfo(id);
+             ApiResponse<ToDoItem> localVarResponse = DeleteOneWithHttpInfo(id);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -481,8 +482,8 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of to do item to delete</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DeleteOneWithHttpInfo (Guid id)
+        /// <returns>ApiResponse of ToDoItem</returns>
+        public ApiResponse<ToDoItem> DeleteOneWithHttpInfo (Guid id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -525,9 +526,9 @@ namespace Org.OpenAPITools.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<ToDoItem>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                null);
+                (ToDoItem) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ToDoItem)));
         }
 
         /// <summary>
@@ -536,10 +537,11 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of to do item to delete</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteOneAsync (Guid id, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>Task of ToDoItem</returns>
+        public async System.Threading.Tasks.Task<ToDoItem> DeleteOneAsync (Guid id, CancellationToken cancellationToken = default(CancellationToken))
         {
-             await DeleteOneWithHttpInfoAsync(id, cancellationToken);
+             ApiResponse<ToDoItem> localVarResponse = await DeleteOneWithHttpInfoAsync(id, cancellationToken);
+             return localVarResponse.Data;
 
         }
 
@@ -549,8 +551,8 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of to do item to delete</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteOneWithHttpInfoAsync (Guid id, CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>Task of ApiResponse (ToDoItem)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<ToDoItem>> DeleteOneWithHttpInfoAsync (Guid id, CancellationToken cancellationToken = default(CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -593,9 +595,9 @@ namespace Org.OpenAPITools.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<ToDoItem>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                null);
+                (ToDoItem) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ToDoItem)));
         }
 
         /// <summary>
@@ -603,10 +605,10 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">maximum number of results to return (optional)</param>
-        /// <returns>List&lt;List&gt;</returns>
-        public List<List<Object>> GetMany (int? limit = default(int?))
+        /// <returns>List<ToDoItem></returns>
+        public List<ToDoItem> GetMany (int? limit = default(int?))
         {
-             ApiResponse<List<List<Object>>> localVarResponse = GetManyWithHttpInfo(limit);
+             ApiResponse<List<ToDoItem>> localVarResponse = GetManyWithHttpInfo(limit);
              return localVarResponse.Data;
         }
 
@@ -615,8 +617,8 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">maximum number of results to return (optional)</param>
-        /// <returns>ApiResponse of List&lt;List&gt;</returns>
-        public ApiResponse<List<List<Object>>> GetManyWithHttpInfo (int? limit = default(int?))
+        /// <returns>ApiResponse of List<ToDoItem></returns>
+        public ApiResponse<List<ToDoItem>> GetManyWithHttpInfo (int? limit = default(int?))
         {
 
             var localVarPath = "/toDo";
@@ -656,9 +658,9 @@ namespace Org.OpenAPITools.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<List<Object>>>(localVarStatusCode,
+            return new ApiResponse<List<ToDoItem>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (List<List<Object>>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<List<Object>>)));
+                (List<ToDoItem>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<List>)));
         }
 
         /// <summary>
@@ -667,10 +669,10 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">maximum number of results to return (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of List&lt;List&gt;</returns>
-        public async System.Threading.Tasks.Task<List<List<Object>>> GetManyAsync (int? limit = default(int?), CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>Task of List<ToDoItem></returns>
+        public async System.Threading.Tasks.Task<List<ToDoItem>> GetManyAsync (int? limit = default(int?), CancellationToken cancellationToken = default(CancellationToken))
         {
-             ApiResponse<List<List<Object>>> localVarResponse = await GetManyWithHttpInfoAsync(limit, cancellationToken);
+             ApiResponse<List<ToDoItem>> localVarResponse = await GetManyWithHttpInfoAsync(limit, cancellationToken);
              return localVarResponse.Data;
 
         }
@@ -681,8 +683,8 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">maximum number of results to return (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel request (optional) </param>
-        /// <returns>Task of ApiResponse (List&lt;List&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<List<Object>>>> GetManyWithHttpInfoAsync (int? limit = default(int?), CancellationToken cancellationToken = default(CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;ToDoItem&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<ToDoItem>>> GetManyWithHttpInfoAsync (int? limit = default(int?), CancellationToken cancellationToken = default(CancellationToken))
         {
 
             var localVarPath = "/toDo";
@@ -722,9 +724,9 @@ namespace Org.OpenAPITools.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<List<Object>>>(localVarStatusCode,
+            return new ApiResponse<List<ToDoItem>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (List<List<Object>>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<List<Object>>)));
+                (List<ToDoItem>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<List>)));
         }
 
         /// <summary>
