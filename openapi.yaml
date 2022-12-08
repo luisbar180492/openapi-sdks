@@ -25,6 +25,7 @@ paths:
       description: |
         Returns all to do items.
       operationId: getMany
+      x-returnType: List<ToDoItem>
       parameters:
         - name: limit
           in: query
@@ -54,6 +55,7 @@ paths:
         - to do
       description: Creates a new to do item
       operationId: createOne
+      x-returnType: ToDoItem
       requestBody:
         description: To do item to create
         required: true
@@ -81,6 +83,7 @@ paths:
         - to do
       description: Returns a to do item by id
       operationId: getOne
+      x-returnType: ToDoItem
       parameters:
         - name: id
           in: path
@@ -108,6 +111,7 @@ paths:
         - to do
       description: Deletes a to do item by id
       operationId: deleteOne
+      x-returnType: ToDoItem
       parameters:
         - name: id
           in: path
