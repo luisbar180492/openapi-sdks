@@ -19,4 +19,4 @@ jobs:
     - name: Build
       run: cd src/sdks/csharp && chmod +x ./build.sh && ./build.sh
     - name: Deploy to Github Packages
-      run: cd src/sdks/csharp && dotnet nuget push "Org.OpenAPITools/bin/Release/*.nupkg" --api-key ${{ github.token }} --source "github"
+      run: cd src/sdks/csharp && dotnet nuget push "Org.OpenAPITools/bin/Release/OpenAPILibrary.1.0.24.nupkg" --api-key ${{ github.token }} --source "github"
