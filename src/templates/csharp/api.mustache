@@ -339,7 +339,7 @@ namespace {{packageName}}.{{apiPackage}}
             {{#vendorExtensions.x-returnType}}
             return new ApiResponse<{{{vendorExtensions.x-returnType}}}>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.{{^netStandard}}Name{{/netStandard}}{{#netStandard}}Key{{/netStandard}}, x => string.Join(",", x.Value){{#caseInsensitiveResponseHeaders}}, StringComparer.OrdinalIgnoreCase{{/caseInsensitiveResponseHeaders}}),
-                ({{{vendorExtensions.x-returnType}}}) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof({{{returnContainer}}}{{^returnContainer}}{{{vendorExtensions.x-returnType}}}{{/returnContainer}})));
+                ({{{vendorExtensions.x-returnType}}}) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof({{{vendorExtensions.x-returnType}}})));
             {{/vendorExtensions.x-returnType}}
             {{^vendorExtensions.x-returnType}}
             return new ApiResponse<Object>(localVarStatusCode,
@@ -492,7 +492,7 @@ namespace {{packageName}}.{{apiPackage}}
             {{#vendorExtensions.x-returnType}}
             return new ApiResponse<{{{vendorExtensions.x-returnType}}}>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.{{^netStandard}}Name{{/netStandard}}{{#netStandard}}Key{{/netStandard}}, x => string.Join(",", x.Value){{#caseInsensitiveResponseHeaders}}, StringComparer.OrdinalIgnoreCase{{/caseInsensitiveResponseHeaders}}),
-                ({{{vendorExtensions.x-returnType}}}) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof({{{returnContainer}}}{{^returnContainer}}{{{vendorExtensions.x-returnType}}}{{/returnContainer}})));
+                ({{{vendorExtensions.x-returnType}}}) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof({{{vendorExtensions.x-returnType}}})));
             {{/vendorExtensions.x-returnType}}
             {{^vendorExtensions.x-returnType}}
             return new ApiResponse<Object>(localVarStatusCode,

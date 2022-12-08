@@ -660,7 +660,7 @@ namespace Org.OpenAPITools.Api
 
             return new ApiResponse<List<ToDoItem>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (List<ToDoItem>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<List>)));
+                (List<ToDoItem>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<ToDoItem>)));
         }
 
         /// <summary>
@@ -726,7 +726,7 @@ namespace Org.OpenAPITools.Api
 
             return new ApiResponse<List<ToDoItem>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (List<ToDoItem>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<List>)));
+                (List<ToDoItem>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<ToDoItem>)));
         }
 
         /// <summary>
