@@ -15,9 +15,7 @@ jobs:
       with:
         dotnet-version: ${{ matrix.dotnet-version }}
     - name: Authenticate with GitHub
-      uses: actions/github-authenticate@v2
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+      run: dotnet nuget add source --username luisbar180492 --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/luisbar180492/index.json"
     - name: Build
       run: cd src/sdks/csharp && chmod +x ./build.sh && ./build.sh
     - name: Deploy to Github Packages
