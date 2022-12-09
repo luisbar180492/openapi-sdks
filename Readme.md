@@ -110,4 +110,4 @@ Do not forget to change the owner name by yours
 
 
 ## Todo
-[] Send dll to Nuget server
+[ ] Send dll to Nuget server
